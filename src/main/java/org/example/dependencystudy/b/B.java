@@ -1,20 +1,21 @@
 package org.example.dependencystudy.b;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.example.dependencystudy.a.A;
 
+@Entity
+@Getter
+@Setter
 public class B {
-    private A a;
-    private final String val = "B";
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public B(A a) {
-        this.a = a;
-    }
+    private String val;
 
-    public String getVal(){
-        return this.val;
-    }
-
-    public String getAval(){
-        return this.a.getVal();
+    public void setAVal(A a) {
+        a.setBval(val);
     }
 }

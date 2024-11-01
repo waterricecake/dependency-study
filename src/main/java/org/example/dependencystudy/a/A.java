@@ -1,20 +1,27 @@
 package org.example.dependencystudy.a;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.example.dependencystudy.b.B;
 
+@Entity
+@NoArgsConstructor
+@Setter
+@Getter
 public class A  {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "b_id")
     private B b;
-    private final String val = "A";
 
-    public void setB(B b) {
-        this.b = b;
-    }
+    private String val;
 
-    public String getVal(){
-        return this.val;
-    }
-
-    public String getBval(){
-        return this.b.getVal();
+    public void setBval(String val){
+        this.b.setVal(val);
     }
 }
