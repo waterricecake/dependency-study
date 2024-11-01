@@ -9,4 +9,8 @@ public class B {
     public String getVal(){
         return this.val;
     }
+
+    public String getAval(){
+        return this.a.getVal();
+    }
 }
