@@ -3,7 +3,6 @@ package org.example.dependencystudy.b;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.dependencystudy.a.A;
 
 @Entity
 @Getter
@@ -14,8 +13,4 @@ public class B {
     private Long id;
 
     private String val;
-
-    public void setAVal(A a) {
-        a.setBval(val);
-    }
 }
