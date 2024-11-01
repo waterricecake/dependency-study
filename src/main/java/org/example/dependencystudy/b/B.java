@@ -1,12 +1,10 @@
 package org.example.dependencystudy.b;
 
-import org.example.dependencystudy.a.A;
-
 public class B {
-    private A a;
+    private AInterface a;
     private final String val = "B";
 
-    public B(A a) {
+    public B(AInterface a) {
         this.a = a;
     }
 

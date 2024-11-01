@@ -1,8 +1,9 @@
 package org.example.dependencystudy.a;
 
+import org.example.dependencystudy.b.AInterface;
 import org.example.dependencystudy.b.B;
 
-public class A  {
+public class A implements AInterface {
     private B b;
     private final String val = "A";
 
